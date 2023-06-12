@@ -27,6 +27,9 @@ Route::post('/login',[userController::class,'auth'])->name('login');
 
 Route::get('/logout',[userController::class,'logout'])->name('logout');
 
+Route::get('auth/google', [userController::class,'login_google']);
+
+
 
 Route::middleware('auth')->group(function () {
 
@@ -35,7 +38,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/profile',[userController::class,'load_profile'])->name('profile');
 
-    Route::post('/storeprofile',[userController::class,'storeprofile'])->name('storeprofile');
+    Route::post('/storeprofile',[userController::class,'store_profile'])->name('storeprofile');
 
     Route::get('/userlist',[userController::class,'load_all_users'])->name('userlist');
 

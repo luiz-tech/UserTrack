@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-
+use Socialite;
 
 //modelos
 use App\Models\Usuario;
@@ -43,6 +43,20 @@ class userController extends Controller
             return true;
 
         } else return false;
+    }
+
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback()
+    {
+        $user = Socialite::driver('google')->user();
+
+        // Lógica para verificar o usuário e fazer o login
+
+        return redirect('/home');
     }
 
     public function logout()
