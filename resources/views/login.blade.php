@@ -6,6 +6,19 @@
   <title>Login | UserTrack</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <style type="text/css">
+    .btn-google {
+      background-color: #dd4b39;
+      color: #fff;
+      border-color: #dd4b39;
+    }
+
+    .btn-google:hover {
+      background-color: #c23321;
+      border-color: #c23321;
+    }
+
+  </style>
 </head>
 
 <body class="hold-transition login-page">
@@ -48,12 +61,19 @@
             </div>
           </div>
         </form>
-        <p class="mb-1">
-          <a href="forgot-password.html">Esqueci minha Senha</a>
-        </p>
-        <p class="mb-0">
-          <a href="register.html" class="text-center">Registrar novo Membro</a>
-        </p>
+
+          <div class="mt-3 border-top text-center">
+            <span class="border px-2 mt-2 mb-3 bg-white">Login Social</span>
+          </div>
+
+          <a href="{{ route('authGoogle') }}" class="btn btn-primary btn-google w-100 mb-2 mt-4">
+            <i class="fab fa-google me-2"></i> Login com Google
+          </a>
+
+          <a href="#" class="btn btn-primary btn-facebook w-100">
+            <i class="fab fa-facebook-f me-2"></i> Login com Facebook
+          </a>
+     
       </div>
     </div>
   </div>

@@ -29,14 +29,12 @@ Route::post('/login',[userController::class,'auth'])->name('login');
 
 Route::get('/logout',[userController::class,'logout'])->name('logout');
 
-Route::get('auth/google', [userController::class,'login_google']);
-
 // ------------ LOGIN COM SOCIALITE --------------------- //
 Route::get('/login/redirect', function () {
     return Socialite::driver('google')->redirect();
-});
+})->name('authGoogle');;
  
-Route::get('/login/google/callback',[socialiteController::class,'login_google']);
+Route::get('/login/google/callback',[socialiteController::class,'login_google'])->name('callbackGoogle');
 
 // ------------------------------------------------------ //
 
