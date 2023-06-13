@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 use App\Http\Controllers\userController;
 use App\Http\Controllers\productController;
+use App\Http\Controllers\socialiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,14 @@ Route::get('/logout',[userController::class,'logout'])->name('logout');
 
 Route::get('auth/google', [userController::class,'login_google']);
 
+// ------------ LOGIN COM SOCIALITE --------------------- //
+Route::get('/login/redirect', function () {
+    return Socialite::driver('google')->redirect();
+});
+ 
+Route::get('/login/google/callback',[socialiteController::class,'login_google']);
 
+// ------------------------------------------------------ //
 
 Route::middleware('auth')->group(function () {
 

@@ -15,48 +15,23 @@ use App\Models\Usuario;
 
 class userController extends Controller
 {
-    //método ajax
     public function auth(Request $request)
     {
-
         $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials) === true) {
+        $user = Usuario::where('email', $credentials['email'])->first();
+
+        if ($user && Hash::check($credentials['password'], $user->password)) {
             // Autenticação bem-sucedida
 
-            $user = Auth::user();
-           
-            Session::put([
+            Auth::login($user);
 
-                'id' => $user->id,
-                'nome' => $user->nome,
-                'email' => $user->email,
-                'senha' => $user->password,
-                'cpf' => $user->cpf,
-                'prazo' => $user->prazo,
-                'nivel' => $user->nivel,
-                'created_at' => $user->created_at,
-                'updated_at' => $user->updated_at,
+            Session::put($user->toArray());
 
-            ]);
+            return response()->json(true);
+        }
 
-            return true;
-
-        } else return false;
-    }
-
-    public function redirectToGoogle()
-    {
-        return Socialite::driver('google')->redirect();
-    }
-
-    public function handleGoogleCallback()
-    {
-        $user = Socialite::driver('google')->user();
-
-        // Lógica para verificar o usuário e fazer o login
-
-        return redirect('/home');
+        return response()->json(false);
     }
 
     public function logout()

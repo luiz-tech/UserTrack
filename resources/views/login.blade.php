@@ -63,5 +63,37 @@
   <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="adminlte/dist/js/adminlte.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script type="text/javascript">
+      $(document).ready(function() {
+      $('#form').submit(function(event) {
+          event.preventDefault();
+
+          var formData = $(this).serialize();
+
+          $.ajax({
+              url: '{{ route("login") }}',
+              type: 'POST',
+              data: formData,
+              dataType: 'json',
+              success: function(response) {
+                  if (response === true) {
+                      alert('Usuário Logado');
+                      window.location.href = '{{ route('dashboard') }}';
+                  } else {
+                      alert('Credenciais inválidas');
+                      console.log(response);
+                  }
+              },
+              error: function(xhr, status, error) {
+                  // Tratar erros caso ocorram
+                  console.log(error);
+              }
+          });
+      });
+  });
+
+  </script>
+
 </body>
 </html>

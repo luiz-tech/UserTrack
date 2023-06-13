@@ -54,14 +54,14 @@
 
 							<div class="form-group">
 							<label>Entrou em:</label>
-							<input class="form-control" placeholder="Entrou em:" disabled="" value="{{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', session('created_at'))->format('d/m/Y')}}"/>
+							<input class="form-control" placeholder="Entrou em:" disabled="" value="{{session('created_at')}}"/>
 							</div>
 							</div>
 
 							<div class="col-sm-6">
 							<div class="form-group">
 							<label>Atualizado em:</label>
-							<input class="form-control"placeholder="Atualizado em:" disabled=""value="{{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', session('updated_at'))->format('d/m/Y')}}"/>
+							<input class="form-control"placeholder="Atualizado em:" disabled=""value="{{session('updated_at')}}"/>
 							</div>
 							</div>
 
