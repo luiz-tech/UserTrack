@@ -105,7 +105,7 @@
 
 				      success: function(response) {
 				        // Lógica de sucesso da requisição
-				        
+				        alert(response);
   				      if(response.status == true)
   			        {	
                   alert('Usuário Cadastrado com Sucesso '); 

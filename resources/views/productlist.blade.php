@@ -25,12 +25,12 @@
                         </ol>
                        
                         <div class="row">
-                            <div class="col-xl-6">
+                            <div class="col-xl-12">
                                 
-                        <div class="card mb-4">
+                        <div class="card mb-12">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Consulte os Usuários
+                                Consulte os Produtos
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">

@@ -54,7 +54,7 @@ Route::middleware('auth')->group(function () {
         return view('newuser');
     })->name('newuser');
 
-    Route::post('/storenewuser',[userController::class,'storeNewUser'])->name('storenewuser');
+    Route::post('/storenewuser',[userController::class,'store_neW_user'])->name('storenewuser');
 
     Route::get('/editnewuser',[userController::class,'edit_new_user'])->name('edituser');
 

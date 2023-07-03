@@ -111,12 +111,12 @@
 			   
 				    $.ajax({
 				      url: '{{ route("storenewuser") }}',
-				      method: 'POST',
+				      method: 'post',
 				      data: formData,
 
 				      success: function(response) {
 				        // Lógica de sucesso da requisição
-				        
+
   				      if(response.status == true)
   			        {	
                   alert('Usuário Cadastrado com Sucesso '); 

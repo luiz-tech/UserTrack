@@ -89,7 +89,7 @@ class userController extends Controller
 
                 'nome'      => $form->name,
                 'email'     => $form->email,
-                'password'  => Hash::make('123'),
+                'senha'     => Hash::make('123'),
                 'cpf'       => $form->cpf,
                 'prazo'     => $form->prazo,
                 'nivel'     => $form->nivel,
@@ -101,6 +101,7 @@ class userController extends Controller
         } catch (\Exception $e) {
             // Tratamento do erro caso ocorra
             // Por exemplo, você pode registrar o erro ou retornar uma resposta de erro
+
             return response()->json(['status'=>false,'msg' => 'Erro ao criar o usuário'.$e], 500);   
         }
         } else {

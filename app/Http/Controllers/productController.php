@@ -24,15 +24,17 @@ class productController extends Controller
 
     public function store_neW_product(Request $request)
     {
+        //return $request->preco;
+       
         try{
             $create = Produto::create([
                 
-                'nome'  => $request->nome,
-                'categoria'  => $request->categoria,
-                'preco'  => $request->preco,
-                'qtd_estoque'  => $request->quantidade,
-                'prazo'  => $request->prazo,
-                'user_id' => $request->user_id,
+                'nome'          => $request->nome,
+                'categoria'     => $request->categoria,
+                'preco'         => $request->preco,
+                'qtd_estoque'   => $request->quantidade,
+                'prazo'         => $request->prazo,
+                'user_id'       => $request->user_id,
 
             ]);
 

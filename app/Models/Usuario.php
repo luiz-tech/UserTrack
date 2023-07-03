@@ -12,7 +12,7 @@ class Usuario extends Authenticatable
 
     protected $table = 'usuarios';
 
-    protected $fillable = ['nome', 'email', 'password', 'prazo', 'cpf', 'nivel'];
+    protected $fillable = ['nome', 'email', 'senha', 'prazo', 'cpf', 'nivel'];
 
     public function produto()
     {

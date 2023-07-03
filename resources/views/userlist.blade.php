@@ -19,16 +19,24 @@
     <!-- Meio da Página -->
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid px-4">
-                <h1 class="mt-4">Lista de Usuários</h1>
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Usuários de UserTrack</li>
-                </ol>
+            <div class="container-fluid px-4 mb-5">
+                
+                <div class="row mt-5">
+                    <div class="col-10">
+                        <h1 class="mt-4">Lista de Usuários</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Usuários de UserTrack</li>
+                        </ol>                        
+                    </div>
+                    <div class="col-2 mt-5">
+                        <a type="button" href="{{ route('newuser') }}" class="btn btn-outline-success">Novo Usuário</a>
+                    </div>
+                </div>
 
                 <div class="row">
-                    <div class="col-xl-6">
+                    <div class="col-xl-12">
 
-                        <div class="card mb-4">
+                        <div class="card mb-12">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Consulte os Usuários
